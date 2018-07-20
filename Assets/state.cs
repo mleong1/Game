@@ -14,5 +14,16 @@ public class state : ScriptableObject {
     //first number is the minimum size in inspector of field and the second is the
     //amount of lines before we start to scroll.
     [TextArea(14, 10)][SerializeField]string storyText;
+    [SerializeField] state[] nextStates;
 
+    //getter method fro story text
+    public string getStoryText()
+    {
+        return storyText;
+    }
+
+    public state[] getNextStates()
+    {
+        return nextStates;
+    }
 }

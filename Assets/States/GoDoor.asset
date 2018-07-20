@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73eaf81645d1e4f4684315bcb38f3c26, type: 3}
+  m_Name: GoDoor
+  m_EditorClassIdentifier: 
+  storyText: 'You decide to knock on the door to ask for help. You knock half-heartedly
+    and are greeted
+
+    by a booming, deep growl of a voice. "Who is it?"
+
+
+    1) Pizza man! Wrong house!
+
+    2) I am [Protagonist Name]! My wagon is broken!'
+  nextStates: []

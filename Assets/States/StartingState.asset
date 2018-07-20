@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73eaf81645d1e4f4684315bcb38f3c26, type: 3}
+  m_Name: StartingState
+  m_EditorClassIdentifier: 
+  storyText: 'You find yourself stuck in the rain at the foot of a large gothic castle
+    after your wagon has run into a ditch. You see that the wheels of the wagon are
+    stuck in mud.
+
+
+    Do you:
+
+    1) Try and pull the wagon free from the mud?
+
+    2) Try knocking on the castle door?'
+  nextStates:
+  - {fileID: 11400000, guid: 5f826514d17478145b7ffcedc1ebd538, type: 2}
+  - {fileID: 11400000, guid: f9bba791fb1ce6c498d15d1446721662, type: 2}
