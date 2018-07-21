@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class numberWizard : MonoBehaviour {
 
-    int guessMax;
-    int guessMin;
+    [SerializeField] int guessMax;
+    [SerializeField] int guessMin;
+    //need to link guess to the output text in Guess Text game object 
+    [SerializeField] Text guessText;
     int guess;
 
     // Use this for initialization
@@ -16,43 +19,29 @@ public class numberWizard : MonoBehaviour {
 
     void StartGame()
     {
-        guessMax = 1000;
-        guessMin = 1;
-        guess = 500;
-        Debug.Log("Welcome to Number Wizard");
-        print("Please pick a number");
-        print("The highest number is " + guessMax);
-        print("The lowest number is " + guessMin);
-        print("Is number higher or lower than my 500");
-        print("Push up = higher, push down = lower, push enter = correct");
-        
+        //guessMax and guessMin are in the serialized field in inspector
+        guess = (guessMax + guessMin) / 2;
+        //tostring to convert the int guess into a string for text
+        guessText.text = guess.ToString();
         guessMax += 1;
     }
 
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            guessMin = guess;
-            NextGuess();
-            print(guessMin);
-            print(guess);
-        } else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            guessMax = guess;
-            NextGuess();
-            print(guessMax);
-        } else if (Input.GetKeyDown(KeyCode.Return))
-        {
-            print("I am correct!");
-            print("Lets play again!");
-            StartGame();
-        }
-	}
+    public void onPressHigher()
+    {
+        guessMin = guess;
+        NextGuess();
+    }
+
+    public void onPressLower()
+    {
+        guessMax = guess;
+        NextGuess();
+    }
+	
 
     void NextGuess()
     {
         guess = (guessMax + guessMin) / 2;
-        print("It is higher than or lower than " + guess);
+        guessText.text = guess.ToString();
     }
 }
